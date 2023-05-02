@@ -1,13 +1,10 @@
 import scrapy
-import json
-from scrapy.http.request.json_request import JsonRequest
 
 
 class HoodsSpider(scrapy.Spider):
     name = 'products'
     start_urls = ['https://www.dresslily.com/hoodies-c-181.html']
-    headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
-                   'accept': 'application/json'}
+    headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'}
 
 
     def parse(self, response):
@@ -47,7 +44,6 @@ class HoodsSpider(scrapy.Spider):
         except:
             res28 = None
             res29 = None
-
 
         yield{
             'price with dis': response.css('span.curPrice::text').get(), 
