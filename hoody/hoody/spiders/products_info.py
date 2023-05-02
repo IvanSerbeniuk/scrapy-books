@@ -15,7 +15,7 @@ class HoodsSpider(scrapy.Spider):
         next_page = response.css('div.site-pager-pad-pc.site-pager ul li a::attr(href)')[-1].get()
         if next_page is not None:
             next_page = 'https://www.dresslily.com' + next_page
-            yield response.follow(next_page, callback=self.parse)  #точно переходит по ссылке?)
+            yield response.follow(next_page, callback=self.parse)  
 
     def parse_hoodos(self, response):
         discount = response.css('title::text').get()
