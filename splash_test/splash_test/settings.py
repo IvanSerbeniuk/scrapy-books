@@ -92,6 +92,7 @@ REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 
+#-----SPLASH-----
 SPLASH_URL = 'http://0.0.0.0:8050/'
 
 DOWNLOADER_MIDDLEWARES = {
@@ -103,3 +104,4 @@ DOWNLOADER_MIDDLEWARES = {
 SPIDER_MIDDLEWARES = {
     'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
 }
+#-----SPLASH-----
